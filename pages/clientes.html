@@ -1,38 +1,80 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>Área do Cliente | Space Metal</title>
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Área do Cliente – Space Metal Serralheria</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <script src="../assets/js/script.js" defer></script>
+  </head>
+  <body>
     <header>
-        <h1>Área do Cliente</h1>
-        <nav>
-            <a href="../index.html">Início</a> |
-            <a href="clientes.html">Meus Dados</a> |
-            <a href="contratos.html">Meus Contratos</a> |
-            <a href="pagamentos.html">Pagamentos</a>
-        </nav>
+      <h1>Space Metal Serralheria</h1>
+      <p>
+        <b>CNPJ:</b>
+        41.817.914/0001-27 |
+        <i>Estruturas Metálicas e Serralheria Técnica Sob Medida</i>
+      </p>
+      <hr />
+      <p>
+        <b>Navegação Rápida:</b>
+        <a href="../index.html">Início</a>
+        |
+        <a href="quem-somos.html">Quem Somos</a>
+        |
+        <a href="produtos.html">Produtos</a>
+        |
+        <a href="servicos.html">Serviços</a>
+        |
+        <a href="orcamentos.html">Orçamentos</a>
+        |
+        <a href="pagamentos.html">Pagamentos</a>
+        |
+        <a href="contratos.html">Contratos</a>
+        |
+        <a href="clientes.html">Área do Cliente</a>
+        |
+        <a href="acompanhamento.html">Acompanhamento</a>
+        |
+        <a href="feedback.html">Feedback</a>
+        |
+        <a href="contato.html">Contato</a>
+      </p>
+      <hr />
     </header>
-    <hr>
-
     <main>
-        <h2>Cadastro / Atualização de Dados do Cliente</h2>
-        <form>
-            <p>
-                <label for="cpf_cnpj">CPF ou CNPJ:</label><br>
-                <input type="text" id="cpf_cnpj" name="cpf_cnpj" required>
-            </p>
-            <p>
-                <label for="nome_cliente">Nome ou Razão Social:</label><br>
-                <input type="text" id="nome_cliente" name="nome_cliente" required>
-            </p>
-            <p>
-                <label for="endereco">Endereço de Obra/Instalação:</label><br>
-                <input type="text" id="endereco" name="endereco" required>
-            </p>
-            <button type="submit">Salvar Dados</button>
-        </form>
+      <h2>Área do Cliente</h2>
+      <p>Informe o código do pedido recebido no contrato para acompanhar a fabricação.</p>
+      <form action="acompanhamento.html" method="get">
+        <label>
+          Código do pedido
+          <input name="codigo" placeholder="Ex.: SM-0001" required />
+        </label>
+        <button type="submit">Consultar pedido</button>
+      </form>
+      <h3>Atalhos</h3>
+      <ul>
+        <li><a href="contratos.html">Contratos e condições</a></li>
+        <li><a href="pagamentos.html">Pagamentos</a></li>
+        <li><a href="feedback.html">Avaliar o atendimento</a></li>
+        <li><a href="orcamentos.html">Novo orçamento</a></li>
+      </ul>
     </main>
-</body>
+    <footer>
+      <hr />
+      <p>
+        <a href="faq.html">Dúvidas Frequentes</a>
+        |
+        <a href="termos.html">Termos de Uso</a>
+        |
+        <a href="privacidade.html">Política de Privacidade</a>
+      </p>
+      <p>
+        <b>Space Metal Serralheria</b>
+        | CNPJ 41.817.914/0001-27 | ©
+        <span class="y">2026</span>
+        Todos os direitos reservados.
+      </p>
+    </footer>
+  </body>
 </html>

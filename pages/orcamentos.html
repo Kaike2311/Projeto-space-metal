@@ -1,63 +1,119 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>Solicitar Orçamento | Space Metal</title>
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Orçamentos – Space Metal Serralheria</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <script src="../assets/js/script.js" defer></script>
+  </head>
+  <body>
     <header>
-        <h1>Solicitação de Orçamento</h1>
-        <nav>
-            <a href="../index.html">Início</a> |
-            <a href="produtos.html">Produtos</a> |
-            <a href="orcamentos.html">Orçamentos</a>
-        </nav>
+      <h1>Space Metal Serralheria</h1>
+      <p>
+        <b>CNPJ:</b>
+        41.817.914/0001-27 |
+        <i>Estruturas Metálicas e Serralheria Técnica Sob Medida</i>
+      </p>
+      <hr />
+      <p>
+        <b>Navegação Rápida:</b>
+        <a href="../index.html">Início</a>
+        |
+        <a href="quem-somos.html">Quem Somos</a>
+        |
+        <a href="produtos.html">Produtos</a>
+        |
+        <a href="servicos.html">Serviços</a>
+        |
+        <a href="orcamentos.html">Orçamentos</a>
+        |
+        <a href="pagamentos.html">Pagamentos</a>
+        |
+        <a href="contratos.html">Contratos</a>
+        |
+        <a href="clientes.html">Área do Cliente</a>
+        |
+        <a href="acompanhamento.html">Acompanhamento</a>
+        |
+        <a href="feedback.html">Feedback</a>
+        |
+        <a href="contato.html">Contato</a>
+      </p>
+      <hr />
     </header>
-    <hr>
-
     <main>
-        <h2>Peça uma Cotação Sob Medida</h2>
-        <form>
-            <fieldset>
-                <legend>Dados de Contato</legend>
-                <p>
-                    <label for="nome">Nome Completo:</label><br>
-                    <input type="text" id="nome" name="nome" required>
-                </p>
-                <p>
-                    <label for="email">E-mail:</label><br>
-                    <input type="email" id="email" name="email" required>
-                </p>
-                <p>
-                    <label for="telefone">Telefone / WhatsApp:</label><br>
-                    <input type="tel" id="telefone" name="telefone" required>
-                </p>
-            </fieldset>
-
-            <fieldset>
-                <legend>Detalhes do Projeto</legend>
-                <p>
-                    <label for="tipoProjeto">Tipo de Serviço:</label><br>
-                    <select id="tipoProjeto" name="tipoProjeto">
-                        <option value="portao">Portão Automático</option>
-                        <option value="grade">Grades de Segurança</option>
-                        <option value="mezanino">Mezanino / Estrutura Metálica</option>
-                        <option value="cobertura">Cobertura / Telhado</option>
-                        <option value="personalizado" selected>Serviço Personalizado / Outro</option>
-                    </select>
-                </p>
-                <p>
-                    <label for="medidas">Medidas Aproximadas (Largura x Altura):</label><br>
-                    <input type="text" id="medidas" name="medidas" placeholder="Ex: 3.00m x 2.20m">
-                </p>
-                <p>
-                    <label for="descricao">Especifique o que deseja (Caso tenha selecionado Outro / Personalizado):</label><br>
-                    <textarea id="descricao" name="descricao" rows="5" cols="45" placeholder="Descreva em detalhes o seu projeto sob medida..."></textarea>
-                </p>
-            </fieldset>
-            <br>
-            <button type="submit">Enviar Solicitação de Orçamento</button>
-        </form>
+      <h2>Solicitar orçamento</h2>
+      <p>
+        Preencha o formulário. Pedimos apenas o necessário; CPF ou CNPJ só serão solicitados na
+        formalização do contrato.
+      </p>
+      <form data-send method="post" action="mailto:contato@seudominio.com.br" enctype="text/plain">
+        <label>
+          Nome ou empresa *
+          <input name="nome" required />
+        </label>
+        <label>
+          Telefone com DDD *
+          <input name="telefone" type="tel" required />
+        </label>
+        <label>
+          E-mail *
+          <input name="email" type="email" required />
+        </label>
+        <label>
+          CEP do local do serviço
+          <input name="cep" inputmode="numeric" maxlength="9" />
+        </label>
+        <label>
+          Tipo de serviço *
+          <select name="servico" required>
+            <option value="">Selecione</option>
+            <option>Portão</option>
+            <option>Grade</option>
+            <option>Guarda-corpo</option>
+            <option>Escada</option>
+            <option>Cobertura</option>
+            <option>Estrutura metálica</option>
+            <option>Mezanino</option>
+            <option>Manutenção</option>
+            <option>Outro</option>
+          </select>
+        </label>
+        <label>
+          Descreva o que precisa (medidas aproximadas, material, prazo desejado) *
+          <textarea name="descricao" rows="6" required></textarea>
+        </label>
+        <label>
+          <input type="checkbox" name="aceite" required style="display: inline; width: auto" />
+          Li e concordo com a
+          <a href="privacidade.html">Política de Privacidade</a>
+          . *
+        </label>
+        <button type="submit" value="wa">Enviar por WhatsApp</button>
+        <button type="submit" value="mail" class="sec">Enviar por e-mail</button>
+      </form>
+      <p>
+        Se o envio não abrir seu programa de e-mail, escreva para
+        <a href="mailto:contato@seudominio.com.br">contato@seudominio.com.br</a>
+        .
+      </p>
     </main>
-</body>
+    <footer>
+      <hr />
+      <p>
+        <a href="faq.html">Dúvidas Frequentes</a>
+        |
+        <a href="termos.html">Termos de Uso</a>
+        |
+        <a href="privacidade.html">Política de Privacidade</a>
+      </p>
+      <p>
+        <b>Space Metal Serralheria</b>
+        | CNPJ 41.817.914/0001-27 | ©
+        <span class="y">2026</span>
+        Todos os direitos reservados.
+      </p>
+    </footer>
+  </body>
 </html>
