@@ -1,0 +1,289 @@
+/* ==========================================================
+   ESTILO PROFISSIONAL - PORTAL COMERCIAL / DIRETÓRIO
+   ========================================================== */
+
+:root {
+  --bg-color: #f1f5f9;
+  --surface: #ffffff;
+  --surface-alt: #f8fafc;
+  --primary-dark: #0f172a;
+  --primary-blue: #1e3a8a; /* Azul corporativo forte */
+  --accent-blue: #0284c7;
+  --accent-hover: #0369a1;
+  --success: #22c55e;      /* Verde indicador online */
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --radius: 12px;
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 10px 20px -3px rgba(0, 0, 0, 0.08);
+  --transition: all 0.25s ease-in-out;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.5;
+  padding: 2rem 1rem;
+}
+
+/* Container Geral */
+.page-wrapper {
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+/* ==========================================================
+   CABEÇALHO / HEADER ESTILO PORTAL
+   ========================================================== */
+header {
+  background: var(--surface);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  margin-bottom: 2rem;
+  border-top: 5px solid var(--primary-blue);
+}
+
+header h1 {
+  font-size: 2.2rem;
+  color: var(--primary-dark);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.3rem;
+}
+
+header > p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+header hr {
+  border: 0;
+  height: 1px;
+  background: var(--border);
+  margin: 1.25rem 0;
+}
+
+/* Navegação em estilo de pílulas profissionais */
+header p:nth-of-type(2) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+header a {
+  display: inline-block;
+  padding: 0.5rem 0.9rem;
+  background: var(--surface-alt);
+  color: var(--primary-blue);
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+header a:hover, 
+header a[aria-current] {
+  background: var(--primary-blue);
+  color: white;
+  border-color: var(--primary-blue);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================
+   CONTEÚDO PRINCIPAL (ESTILO CARTÕES DE DIRETÓRIO)
+   ========================================================== */
+main {
+  background: var(--surface);
+  padding: 2.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+}
+
+main h2 {
+  font-size: 1.5rem;
+  color: var(--primary-dark);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-left: 4px solid var(--accent-blue);
+  padding-left: 0.75rem;
+}
+
+main h2:first-of-type {
+  margin-top: 0;
+}
+
+main p {
+  font-size: 1rem;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+}
+
+/* Listas transformadas em cartões modernos estilo catálogo */
+main ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 1.25rem 0 2rem 0;
+}
+
+main li {
+  background: var(--surface);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+  transition: var(--transition);
+  position: relative;
+}
+
+/* Animação suave ao passar o rato nos cartões (Efeito de elevação) */
+main li:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-blue);
+  box-shadow: var(--shadow-hover);
+}
+
+main li b {
+  color: var(--primary-dark);
+  display: block;
+  font-size: 1.15rem;
+  margin-bottom: 0.35rem;
+}
+
+/* Links internos de destaque */
+main > p a {
+  color: var(--accent-blue);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+main > p a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+/* ==========================================================
+   FORMULÁRIO DE CONTATO / ORÇAMENTO
+   ========================================================== */
+form[data-send] {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+  background: var(--surface-alt);
+  padding: 2rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+@media (min-width: 768px) {
+  form[data-send] {
+    grid-template-columns: 1fr 1fr;
+  }
+  form[data-send] label:nth-of-type(3),
+  form[data-send] button {
+    grid-column: span 2;
+  }
+}
+
+form[data-send] label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--primary-dark);
+  gap: 0.4rem;
+}
+
+form[data-send] input,
+form[data-send] textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font: inherit;
+  font-size: 1rem;
+  background: #fff;
+  transition: var(--transition);
+}
+
+form[data-send] input:focus,
+form[data-send] textarea:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.15);
+}
+
+/* Botão de Envio (Estilo botão de contato dos portais) */
+form[data-send] button {
+  background-color: #16a34a; /* Verde confiável de contato */
+  color: white;
+  border: none;
+  padding: 0.85rem 1.75rem;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 10px rgba(22, 163, 74, 0.2);
+}
+
+form[data-send] button:hover {
+  background-color: #15803d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(22, 163, 74, 0.3);
+}
+
+form[data-send] button:active {
+  transform: translateY(0);
+}
+
+/* ==========================================================
+   RODAPÉ
+   ========================================================== */
+footer {
+  text-align: center;
+  margin-top: 2.5rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border);
+}
+
+footer p {
+  margin: 0.4rem 0;
+}
+
+footer a {
+  color: var(--text-muted);
+  text-decoration: none;
+  margin: 0 0.5rem;
+  transition: var(--transition);
+}
+
+footer a:hover {
+  color: var(--accent-blue);
+  text-decoration: underline;
+}
