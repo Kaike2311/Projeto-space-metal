@@ -1,289 +1,333 @@
-/* ==========================================================
-   ESTILO PROFISSIONAL - PORTAL COMERCIAL / DIRETÓRIO
-   ========================================================== */
+/* =========================================
+   SPACE METAL SERRALHERIA
+   Folha de estilos principal
+   Ficheiro: style/style.css
+   ========================================= */
 
+/* 1. Variáveis e configuração geral */
 :root {
-  --bg-color: #f1f5f9;
-  --surface: #ffffff;
-  --surface-alt: #f8fafc;
-  --primary-dark: #0f172a;
-  --primary-blue: #1e3a8a; /* Azul corporativo forte */
-  --accent-blue: #0284c7;
-  --accent-hover: #0369a1;
-  --success: #22c55e;      /* Verde indicador online */
-  --text-main: #1e293b;
-  --text-muted: #64748b;
-  --border: #e2e8f0;
-  --radius: 12px;
-  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-  --shadow-hover: 0 10px 20px -3px rgba(0, 0, 0, 0.08);
-  --transition: all 0.25s ease-in-out;
+  --cor-fundo: #0b0d10;
+  --cor-superficie: #14181e;
+  --cor-superficie-clara: #1b2129;
+  --cor-texto: #edf0f4;
+  --cor-texto-secundario: #aab3bf;
+  --cor-destaque: #d6a84f;
+  --cor-destaque-hover: #f0c76f;
+  --cor-borda: rgba(255, 255, 255, 0.1);
+  --cor-sucesso: #45c486;
+  --largura-maxima: 1200px;
+  --raio: 14px;
+  --sombra: 0 12px 35px rgba(0, 0, 0, 0.28);
+  --transicao: 0.25s ease;
 }
 
-* {
+*, *::before, *::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-main);
-  line-height: 1.5;
-  padding: 2rem 1rem;
+  margin: 0;
+  min-width: 320px;
+  background: radial-gradient(
+      ellipse at top,
+      rgba(214, 168, 79, 0.07),
+      transparent 45%
+    ),
+    var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Container Geral */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--cor-destaque);
+  text-decoration: none;
+  transition: color var(--transicao);
+}
+
+a:hover {
+  color: var(--cor-destaque-hover);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--cor-destaque);
+  outline-offset: 4px;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+/* 2. Estrutura principal */
 .page-wrapper {
-  max-width: 75rem;
-  margin: 0 auto;
+  width: min(calc(100% - 40px), var(--largura-maxima));
+  margin-inline: auto;
 }
 
-/* ==========================================================
-   CABEÇALHO / HEADER ESTILO PORTAL
-   ========================================================== */
 header {
-  background: var(--surface);
-  padding: 2rem;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-card);
-  margin-bottom: 2rem;
-  border-top: 5px solid var(--primary-blue);
+  padding: 34px 0 20px;
 }
 
 header h1 {
-  font-size: 2.2rem;
-  color: var(--primary-dark);
+  margin: 0 0 8px;
+  color: var(--cor-destaque);
+  font-size: clamp(2rem, 5vw, 3.2rem);
   font-weight: 800;
-  letter-spacing: -0.5px;
-  margin-bottom: 0.3rem;
+  letter-spacing: -1.5px;
+  line-height: 1.15;
 }
 
 header > p {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  margin-bottom: 1.5rem;
+  color: var(--cor-texto-secundario);
 }
 
-header hr {
-  border: 0;
+header p b {
+  color: var(--cor-texto);
+}
+
+header i {
+  font-style: normal;
+}
+
+/* 3. Linhas divisórias */
+hr {
   height: 1px;
-  background: var(--border);
-  margin: 1.25rem 0;
+  margin: 36px 0;
+  border: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(214, 168, 79, 0.55),
+    var(--cor-borda),
+    transparent
+  );
 }
 
-/* Navegação em estilo de pílulas profissionais */
-header p:nth-of-type(2) {
+/* 4. Navegação */
+header p:has(a) {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
   align-items: center;
+  gap: 8px 12px;
+  margin-block: 20px;
+  padding: 16px;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  background: rgba(255, 255, 255, 0.025);
 }
 
-header a {
+header p:has(a) b {
+  width: 100%;
+  color: var(--cor-destaque);
+}
+
+header p a,
+footer a {
+  overflow-wrap: anywhere;
+}
+
+header p a {
   display: inline-block;
-  padding: 0.5rem 0.9rem;
-  background: var(--surface-alt);
-  color: var(--primary-blue);
-  text-decoration: none;
-  border-radius: 8px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  border: 1px solid var(--border);
-  transition: var(--transition);
+  padding: 5px 9px;
+  border-radius: 7px;
+  font-size: 0.92rem;
 }
 
-header a:hover, 
-header a[aria-current] {
-  background: var(--primary-blue);
-  color: white;
-  border-color: var(--primary-blue);
-  transform: translateY(-2px);
+header p a:hover {
+  background: rgba(214, 168, 79, 0.12);
 }
 
-/* ==========================================================
-   CONTEÚDO PRINCIPAL (ESTILO CARTÕES DE DIRETÓRIO)
-   ========================================================== */
-main {
-  background: var(--surface);
-  padding: 2.5rem;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-card);
-}
-
+/* 5. Títulos e textos */
 main h2 {
-  font-size: 1.5rem;
-  color: var(--primary-dark);
-  margin-top: 2rem;
-  margin-bottom: 0.75rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  border-left: 4px solid var(--accent-blue);
-  padding-left: 0.75rem;
+  margin: 38px 0 12px;
+  color: var(--cor-texto);
+  font-size: clamp(1.65rem, 3.5vw, 2.25rem);
+  font-weight: 750;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
 }
 
-main h2:first-of-type {
-  margin-top: 0;
+main > p {
+  color: var(--cor-texto-secundario);
 }
 
-main p {
-  font-size: 1rem;
-  color: var(--text-main);
-  margin-bottom: 1rem;
+main h3 {
+  line-height: 1.35;
 }
 
-/* Listas transformadas em cartões modernos estilo catálogo */
 main ul {
-  list-style: none;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  margin: 1.25rem 0 2rem 0;
+  padding-left: 24px;
 }
 
 main li {
-  background: var(--surface);
-  padding: 1.5rem;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-card);
-  transition: var(--transition);
-  position: relative;
+  margin-bottom: 10px;
+  padding-left: 4px;
+  color: var(--cor-texto-secundario);
 }
 
-/* Animação suave ao passar o rato nos cartões (Efeito de elevação) */
-main li:hover {
-  transform: translateY(-3px);
-  border-color: var(--accent-blue);
-  box-shadow: var(--shadow-hover);
+main li::marker {
+  color: var(--cor-destaque);
 }
 
 main li b {
-  color: var(--primary-dark);
+  color: var(--cor-texto);
+}
+
+/* 6. Blocos clicáveis da galeria */
+.categoria-link-bloco {
   display: block;
-  font-size: 1.15rem;
-  margin-bottom: 0.35rem;
-}
-
-/* Links internos de destaque */
-main > p a {
-  color: var(--accent-blue);
+  margin: 30px 0;
+  padding: clamp(14px, 2.5vw, 24px);
+  overflow: hidden;
+  border: 1px solid var(--cor-borda);
+  border-radius: 20px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.045),
+    rgba(255, 255, 255, 0.012)
+  );
+  color: var(--cor-texto);
+  box-shadow: var(--sombra);
+  transition: transform var(--transicao), border-color var(--transicao),
+    background var(--transicao), box-shadow var(--transicao);
   text-decoration: none;
-  font-weight: 600;
-  transition: var(--transition);
 }
 
-main > p a:hover {
-  color: var(--accent-hover);
-  text-decoration: underline;
+.categoria-link-bloco:hover {
+  transform: translateY(-4px);
+  border-color: rgba(214, 168, 79, 0.65);
+  background: linear-gradient(
+    145deg,
+    rgba(214, 168, 79, 0.09),
+    rgba(255, 255, 255, 0.018)
+  );
+  color: var(--cor-texto);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.4);
 }
 
-/* ==========================================================
-   FORMULÁRIO DE CONTATO / ORÇAMENTO
-   ========================================================== */
+.categoria-link-bloco:focus-visible {
+  outline: 3px solid var(--cor-destaque);
+  outline-offset: 4px;
+}
+
+.categoria-titulo {
+  margin: 0 0 20px;
+  color: var(--cor-destaque);
+  font-size: clamp(1.25rem, 2.6vw, 1.7rem);
+  font-weight: 750;
+}
+
+.categoria-link-bloco:hover .categoria-titulo {
+  color: var(--cor-destaque-hover);
+}
+
+/* 7. Grelha dos cartões */
+.galeria-obras {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* 8. Cartões individuais */
+.card-obra {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  background: var(--cor-superficie);
+  transition: transform var(--transicao), border-color var(--transicao),
+    box-shadow var(--transicao);
+}
+
+.categoria-link-bloco:hover .card-obra {
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.card-obra img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background: var(--cor-superficie-clara);
+  transition: transform 0.45s ease;
+}
+
+.categoria-link-bloco:hover .card-obra img {
+  transform: scale(1.025);
+}
+
+.info-obra {
+  padding: 17px;
+}
+
+.info-obra h3 {
+  margin: 0 0 8px;
+  color: var(--cor-texto);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.info-obra p {
+  margin: 0;
+  color: var(--cor-texto-secundario);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+/* 9. Ligações de ação */
+main > p a {
+  font-weight: 650;
+}
+
+main > p a b {
+  display: inline-block;
+  padding: 8px 12px;
+  border: 1px solid rgba(214, 168, 79, 0.35);
+  border-radius: 8px;
+  background: rgba(214, 168, 79, 0.07);
+  transition: background var(--transicao), border-color var(--transicao);
+}
+
+main > p a:hover b {
+  border-color: var(--cor-destaque);
+  background: rgba(214, 168, 79, 0.16);
+}
+
+/* 10. Formulário de contacto */
 form[data-send] {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.25rem;
-  margin-top: 1.5rem;
-  background: var(--surface-alt);
-  padding: 2rem;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-}
-
-@media (min-width: 768px) {
-  form[data-send] {
-    grid-template-columns: 1fr 1fr;
-  }
-  form[data-send] label:nth-of-type(3),
-  form[data-send] button {
-    grid-column: span 2;
-  }
+  gap: 18px;
+  max-width: 720px;
+  margin: 24px 0 40px;
+  padding: clamp(20px, 4vw, 32px);
+  border: 1px solid var(--cor-borda);
+  border-radius: 18px;
+  background: var(--cor-superficie);
+  box-shadow: var(--sombra);
 }
 
 form[data-send] label {
-  display: flex;
-  flex-direction: column;
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: var(--primary-dark);
-  gap: 0.4rem;
+  display: grid;
+  gap: 8px;
+  color: var(--cor-texto);
+  font-weight: 650;
 }
 
 form[data-send] input,
 form[data-send] textarea {
-  padding: 0.75rem 1rem;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  font: inherit;
-  font-size: 1rem;
-  background: #fff;
-  transition: var(--transition);
-}
-
-form[data-send] input:focus,
-form[data-send] textarea:focus {
-  outline: none;
-  border-color: var(--accent-blue);
-  box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.15);
-}
-
-/* Botão de Envio (Estilo botão de contato dos portais) */
-form[data-send] button {
-  background-color: #16a34a; /* Verde confiável de contato */
-  color: white;
-  border: none;
-  padding: 0.85rem 1.75rem;
-  font-weight: 700;
-  font-size: 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: var(--transition);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  box-shadow: 0 4px 10px rgba(22, 163, 74, 0.2);
-}
-
-form[data-send] button:hover {
-  background-color: #15803d;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(22, 163, 74, 0.3);
-}
-
-form[data-send] button:active {
-  transform: translateY(0);
-}
-
-/* ==========================================================
-   RODAPÉ
-   ========================================================== */
-footer {
-  text-align: center;
-  margin-top: 2.5rem;
-  color: var(--text-muted);
-  font-size: 0.85rem;
-  padding: 1.5rem 0;
-  border-top: 1px solid var(--border);
-}
-
-footer p {
-  margin: 0.4rem 0;
-}
-
-footer a {
-  color: var(--text-muted);
-  text-decoration: none;
-  margin: 0 0.5rem;
-  transition: var(--transition);
-}
-
-footer a:hover {
-  color: var(--accent-blue);
-  text-decoration: underline;
-}
