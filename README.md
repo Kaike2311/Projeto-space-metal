@@ -23,6 +23,19 @@ Projeto acadêmico da disciplina de Desenvolvimento Frontend para Web (Entrega A
 - **Link do site hospedado:** [`https://jonasmateus-ui.github.io/Projeto-space-metal/`](https://jonasmateus-ui.github.io/Projeto-space-metal/)
 - **Validação W3C (HTML5):** estrutura semântica revisada conforme as diretrizes do W3C e validação final recomendada no validador oficial:
 - https://validator.w3.org/
+- https://validator.w3.org/nu/?doc=https%3A%2F%2Fjonasmateus-ui.github.io%2FProjeto-space-metal%2Findex.html
+- https://validator.w3.org/nu/?doc=https%3A%2F%2Fjonasmateus-ui.github.io%2FProjeto-space-metal%2Fpages%2Fprodutos.html
+- https://validator.w3.org/nu/?doc=https%3A%2F%2Fjonasmateus-ui.github.io%2FProjeto-space-metal%2Fpages%2Fservicos.html
+- https://validator.w3.org/nu/?doc=https%3A%2F%2Fjonasmateus-ui.github.io%2FProjeto-space-metal%2Fpages%2Facompanhamento.html
+- https://validator.w3.org/nu/?doc=https%3A%2F%2Fjonasmateus-ui.github.io%2FProjeto-space-metal%2Fpages%2Fcontratos.html
+- https://validator.w3.org/nu/?doc=https%3A%2F%2Fjonasmateus-ui.github.io%2FProjeto-space-metal%2Fpages%2Forcamentos.html
+- https://validator.w3.org/nu/?doc=https%3A%2F%2Fjonasmateus-ui.github.io%2FProjeto-space-metal%2Fpages%2Fpagamentos.html
+- https://validator.w3.org/nu/?doc=https%3A%2F%2Fjonasmateus-ui.github.io%2FProjeto-space-metal%2Fpages%2Fcontato.html
+- https://validator.w3.org/nu/?doc=https%3A%2F%2Fjonasmateus-ui.github.io%2FProjeto-space-metal%2Fpages%2Fprivacidade.html
+- https://validator.w3.org/nu/?doc=https%3A%2F%2Fjonasmateus-ui.github.io%2FProjeto-space-metal%2Fpages%2Fquem-somos.html
+- https://validator.w3.org/nu/?doc=https%3A%2F%2Fjonasmateus-ui.github.io%2FProjeto-space-metal%2Fpages%2Ftermos.html
+- https://validator.w3.org/nu/?doc=https%3A%2F%2Fjonasmateus-ui.github.io%2FProjeto-space-metal%2Fpages%2Ffaq.html
+- https://validator.w3.org/nu/?doc=https%3A%2F%2Fjonasmateus-ui.github.io%2FProjeto-space-metal%2Fpages%2Ffeedback.html
 
 ---
 
